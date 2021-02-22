@@ -20,7 +20,7 @@ export default class SignUp extends Component {
         return (
             <>
                 <main id='sign-up-form' className='form'>
-                    <h2 className='h2'>Register</h2>
+                    <h1 className='h2'>Register</h1>
                     <SignUpForm 
                         onSubmitSuccess={this.handleSubmitSuccess}
                     />

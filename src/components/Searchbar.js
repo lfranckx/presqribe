@@ -7,14 +7,15 @@ export default class Searchbar extends Component {
 
     handleSubmit = ev => {
         ev.preventDefault();
-        console.log(ev);
         this.setState({ error: null });
-        const { term } = ev.target;
 
+        const term  = ev.target[0].value;
+        // console.log('term', term);
+        
         RxApiService.searchByTerm(term)
         .then(res => {
             term.value = '';
-            console.log(res);
+            console.log('res', res);
         })
         .catch(res => {
             this.setState({ error: res.error });
@@ -28,24 +29,26 @@ export default class Searchbar extends Component {
             <main id='searchbar'>
                 <h1>Search for Prescriptions</h1>
                 <form onSubmit={this.handleSubmit}>
+                    <div role='alert'>{error && <p className='error'>{error}</p>}</div>
                     <div className='input-box'>
                         <label 
-                            htmlFor='search'
+                            htmlFor='term'
                             className='hidden'
                         >
-                            search
+                            term
                         </label>
                         <input
+                            autoComplete="on"
                             type='text'
                             name="term"
-                            aria-label="search"
-                            className="search"
-                            id='search'
+                            aria-label="term"
+                            className="term"
+                            id='term'
+                            required
                         />
                     </div>
-                    <button className='btn2'>Search</button>
+                    <button type='submit' className='btn2'>Search</button>
                 </form>
-                <div role='alert'>{error && <p className='error'>{error}</p>}</div>
             </main>
         )
     }

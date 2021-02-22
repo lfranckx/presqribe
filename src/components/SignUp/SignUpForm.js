@@ -63,7 +63,7 @@ export default class SignUpForm extends Component {
                         />
                     </div>
 
-                    <button className='btn'>
+                    <button className='btn2'>
                         Register
                     </button>
 
