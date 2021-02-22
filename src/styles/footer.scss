@@ -1,0 +1,15 @@
+@import './vars';
+
+footer {
+    background: $black;
+    padding: 10px;
+    text-align: center;
+    
+        #copyright {
+            p {
+                margin: 10px;
+                font-size: 1rem;
+            }
+        }
+
+}

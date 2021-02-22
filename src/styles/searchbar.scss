@@ -1,0 +1,24 @@
+@import './vars';
+
+#searchbar {
+    height: 75vh;
+    padding: 2rem;
+    text-align: center;
+
+    h1 {
+        margin: 4rem 0 2rem;
+    }
+    form {
+        div.input-box {
+            input {
+                padding: 15px;
+                font-size: 1.2rem;
+                border: none;
+                border-radius: 2px;
+                margin-bottom: 2rem;
+                color: $black;
+                width: 50%;
+            }
+        }
+    }
+}
