@@ -10,16 +10,15 @@ export default class Searchbar extends Component {
         this.setState({ error: null });
 
         const term  = ev.target[0].value;
-        // console.log('term', term);
         
         RxApiService.searchByTerm(term)
-        .then(res => {
-            term.value = '';
-            console.log('res', res);
+        .then (async (res) => {
+            try {
+                console.log(res);
+            } catch(error) {
+                throw new Error(error);
+            }
         })
-        .catch(res => {
-            this.setState({ error: res.error });
-        });
     } 
 
     render() {
