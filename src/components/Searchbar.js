@@ -14,7 +14,8 @@ export default class Searchbar extends Component {
         RxApiService.searchByTerm(term)
         .then (async (res) => {
             try {
-                console.log(res);
+                console.log('res', res);
+                this.setState({ results: res.drugGroup.conceptGroup[1].conceptProperties });
             } catch(error) {
                 throw new Error(error);
             }
@@ -23,7 +24,8 @@ export default class Searchbar extends Component {
 
     render() {
         const { error } = this.state;
-        
+        console.log(this.state);
+
         return (
             <main id='searchbar'>
                 <h1>Search for Prescriptions</h1>
